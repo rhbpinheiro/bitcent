@@ -1,0 +1,16 @@
+interface PaginaProps {
+    externa?: boolean;
+    children: any;
+    className?: string;
+}
+
+export default function Pagina({ externa, children, className }: PaginaProps) {
+    return (
+        <div
+            className={`flex flex-col min-h-screen bg-gradient-to-r 
+          from-zinc-900 via-black to-zinc-600 ${className ?? ''}`}
+        >
+            {children}
+        </div>
+    );
+}
