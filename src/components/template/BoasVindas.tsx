@@ -1,7 +1,8 @@
-import usuario from "@/data/constants/usuarioFalso";
+import AutenticacaoContext from '@/data/contexts/autenticacaoContext';
+import { useContext } from 'react';
 
 export default function BoasVindas() {
-
+    const { usuario } = useContext(AutenticacaoContext);
 
     function renderizarNome() {
         return (

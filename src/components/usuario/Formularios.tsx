@@ -1,7 +1,7 @@
 import useFormulario from '@/data/hooks/useFormulario';
 import MiniFormulario from '../template/MiniFormulario';
 import usuario from '@/data/constants/usuarioFalso';
-import Usuario from '@/logica/core/Usuario';
+import Usuario from '@/logica/core/usuario/Usuario';
 import { TextInput } from '@mantine/core';
 import Texto from '@/logica/utils/verifTexto';
 import Cpf from '@/logica/utils/cpf';

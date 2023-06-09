@@ -1,4 +1,4 @@
-import Usuario from '@/logica/core/Usuario';
+import Usuario from '@/logica/core/usuario/Usuario';
 import Id from '@/logica/core/comum/Id';
 
 export default {
