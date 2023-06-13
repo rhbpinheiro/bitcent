@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Cabecalho from '../template/Cabecalho';
 import Conteudo from '../template/Conteudo';
 import Pagina from '../template/Pagina';
@@ -10,8 +10,11 @@ import NaoEncontrado from '../template/NaoEncontrado';
 import Id from '@/logica/core/comum/Id';
 import { IconPlus } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
+import ServicosTransacao from '@/logica/core/financas/ServicosTransacao';
+import AutenticacaoContext from '@/data/contexts/autenticacaoContext';
 
 export default function Financas() {
+    const { usuario } = useContext(AutenticacaoContext)
     const [transacoes, setTransacoes] = useState<Transacao[]>(transacoesFalsas);
     const [transacao, setTransacao] = useState<Transacao | null>(null);
 
@@ -26,6 +29,10 @@ export default function Financas() {
                 id: transacao.id ?? Id.novo(),
             },
         ]);
+        if (usuario !== null) {
+          new ServicosTransacao().salvar(transacao, usuario);
+        }
+        
         setTransacao(null);
     }
     function excluir() {

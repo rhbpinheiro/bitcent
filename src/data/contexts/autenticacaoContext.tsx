@@ -19,15 +19,15 @@ export function AutenticacaoProvider(props: any) {
     const [carregando, setCarregando] = useState<boolean>(true);
     const [usuario, setUsuario] = useState<Usuario | null>(null);
 
+    const autenticacao = new Autenticacao();
+
     useEffect(() => {
-        const cancelar = autenticacao.monitorar(() => {
+        const cancelar = autenticacao.monitorar((usuario) => {
             setUsuario(usuario);
             setCarregando(false);
         });
         return () => cancelar();
     }, []);
-
-    const autenticacao = new Autenticacao();
 
     async function loginGoogle() {
         const usuario = await autenticacao.loginGoogle();
@@ -36,7 +36,7 @@ export function AutenticacaoProvider(props: any) {
     }
 
     async function logout() {
-        autenticacao.logout();
+        await autenticacao.logout();
         setUsuario(null);
     }
     return (

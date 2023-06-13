@@ -1,6 +1,6 @@
 import Area from '../comum/Area';
 import Logo from '../comum/Logo';
-import Menu from '../comum/menu';
+import Menu from '../comum/Menu';
 
 export default function Cabecalho() {
     return (

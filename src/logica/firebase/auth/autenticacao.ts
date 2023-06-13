@@ -30,11 +30,11 @@ export default class Autenticacao {
       return signOut(this._auth);
   }
 
-  monitorar(notificar: MonitorarUsuario): CancelarMonitoramento {
-      return onIdTokenChanged(this._auth, async (usuarioFirebase) => {
-          const usuario = this.converterParaUsuario(usuarioFirebase);
-          notificar(usuario);
-      });
+  monitorar(notificar: MonitorarUsuario) : CancelarMonitoramento {
+    return onIdTokenChanged(this._auth, async (usuarioFirebase) => {
+      const usuario = this.converterParaUsuario(usuarioFirebase)
+      notificar(usuario)
+    })
   }
 
   private converterParaUsuario(usuarioFirebase: User | null): Usuario | null {
