@@ -1,6 +1,6 @@
-import Area from '../comum/Area';
-import Logo from '../comum/Logo';
-import Menu from '../comum/Menu';
+import Area from "../comum/Area";
+import Logo from "../comum/Logo";
+import Menu from "./Menu";
 
 export default function Cabecalho() {
     return (
@@ -10,5 +10,5 @@ export default function Cabecalho() {
                 <Menu />
             </div>
         </Area>
-    );
+    )
 }

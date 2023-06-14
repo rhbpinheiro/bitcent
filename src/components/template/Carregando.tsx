@@ -1,17 +1,17 @@
-import Pagina from "./Pagina";
-import Image from "next/image"
-import loading from "../../../public/loading.gif"
+import Image from 'next/image'
+import loading from '../../../public/loading.gif'
+import Pagina from './Pagina'
 
 export default function Carregando() {
-  return (
-    <Pagina className="justify-center items-center">
-      <Image 
-        priority
-        src={loading}
-        alt="loading"
-        width={80}
-        height={80}
-      />
-    </Pagina>
-  )
+    return (
+        <Pagina externa className='justify-center items-center'>
+            <Image
+                priority
+                src={loading}
+                alt="loading"
+                width={40}
+                height={40}
+            />
+        </Pagina>
+    )
 }

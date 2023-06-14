@@ -1,24 +1,22 @@
-import AutenticacaoContext from '@/data/contexts/autenticacaoContext';
-import { useContext } from 'react';
-import { useRouter } from 'next/navigation';
-
+import { useContext } from 'react'
+import { useRouter } from 'next/router'
+import AutenticacaoContext from '@/data/contexts/AutenticacaoContext'
+import Carregando from '../template/Carregando'
 
 interface ForcarAutenticacaoProps {
-    children: any;
+    children: any
 }
 
-export default function ForcarAutenticacao({
-    children,
-}: ForcarAutenticacaoProps) {
-    const router = useRouter();
-    const { usuario, carregando } = useContext(AutenticacaoContext);
+export default function ForcarAutenticacao(props: ForcarAutenticacaoProps) {
+    const router = useRouter()
+    const { usuario, carregando } = useContext(AutenticacaoContext)
 
     if (carregando) {
-        return console.log('ok');
+        return <Carregando />
     } else if (usuario?.email) {
-        return children;
+        return props.children
     } else {
-        router.push('/');
-        return console.log('ok');
+        router.push('/')
+        return <Carregando />
     }
 }

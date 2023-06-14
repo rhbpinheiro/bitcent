@@ -1,28 +1,27 @@
-import ForcarAutenticacao from "../autenticacao/ForcarAutenticacao";
+import ForcarAutenticacao from "../autenticacao/ForcarAutenticacao"
 
 interface PaginaProps {
-    externa?: boolean;
-    children: any;
-    className?: string;
+    externa?: boolean
+    children: any
+    className?: string
 }
 
-export default function Pagina({ externa, children, className }: PaginaProps) {
+export default function Pagina(props: PaginaProps) {
     function renderizar() {
         return (
-            <div
-                className={`flex flex-col min-h-screen bg-gradient-to-r 
-          from-zinc-900 via-black to-zinc-600 ${className ?? ''}`}
-            >
-                {children}
+            <div className={`
+                flex flex-col min-h-screen
+                bg-gradient-to-r from-zinc-900 via-black to-zinc-900
+                ${props.className ?? ''}
+            `}>
+                {props.children}
             </div>
-        );
+        )
     }
 
-    // return renderizar();
-
-    return externa ? (
-        renderizar()
-    ) : (
-        <ForcarAutenticacao> {renderizar()}</ForcarAutenticacao>
-    );
+    return props.externa ? renderizar() : (
+        <ForcarAutenticacao>
+            {renderizar()}
+        </ForcarAutenticacao>
+    )
 }

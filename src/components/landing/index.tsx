@@ -1,9 +1,9 @@
-import Pagina from '../template/Pagina';
-import Cabecalho from './cabecalho';
-import Depoimentos from './depoimentos';
-import Destaque from './destaque';
-import Rodape from './rodape';
-import Vantagens from './vantagens';
+import Pagina from "../template/Pagina";
+import Cabecalho from "./cabecalho";
+import Depoimentos from "./depoimentos";
+import Destaque from "./destaque";
+import Rodape from "./rodape";
+import Vantagens from "./vantagens";
 
 export default function Landing() {
     return (
@@ -14,5 +14,5 @@ export default function Landing() {
             <Depoimentos />
             <Rodape />
         </Pagina>
-    );
+    )
 }

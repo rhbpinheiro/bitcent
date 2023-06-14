@@ -1,10 +1,15 @@
 interface ConteudoProps {
-    children: any;
-    className?: string;
+    children: any
+    className?: string
 }
 
-export default function Conteudo({ children, className }: ConteudoProps) {
+export default function Conteudo(props: ConteudoProps) {
     return (
-        <div className={`flex flex-col p-7 ${className} ?? ''`}>{children}</div>
-    );
+        <div className={`
+            flex flex-col p-7
+            ${props.className ?? ''}
+        `}> 
+            {props.children}
+        </div>
+    )
 }
